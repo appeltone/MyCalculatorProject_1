@@ -8,7 +8,7 @@ public class Calculator {
         //show previous results from result file
         //adding this line to test Commit + push for a file - change2
         UtilsClass.showPreviousResults();
-        while (num1 != -1) {
+        while (true) {
             UtilsClass.printHeader();
             //printResult(calculate(getIntFromUser(), getOperatorFromUser(), getIntFromUser()));
             UtilsClass.printResult(CalculateClass.calculate(UserInteractionClass.getNumFromUser(), UserInteractionClass.getOperatorFromUserUsingInterface(), UserInteractionClass.getNumFromUser()));
