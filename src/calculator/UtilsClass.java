@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class UtilsClass extends Calculator {
+public class UtilsClass {
     final static String RESULT_FILE = "D:\\IdeaProjects\\src\\calculator\\Results.txt";
 
     public static void showPreviousResults() {
@@ -22,7 +22,7 @@ public class UtilsClass extends Calculator {
             while((line=bufferedReader.readLine())!=null) //till end of file
             {
                 stringBuffer.append(line);      //appends line to string buffer
-                stringBuffer.append("\n");     //line feed
+                stringBuffer.append(System.lineSeparator());
             }
             System.out.println(stringBuffer);
 
