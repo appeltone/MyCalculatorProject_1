@@ -6,6 +6,7 @@ public class Calculator {
     public static void main(String[] args) {
 
         //show previous results from result file
+        //adding this line to test Commit + push for a file - change2
         UtilsClass.showPreviousResults();
         while (num1 != -1) {
             UtilsClass.printHeader();
