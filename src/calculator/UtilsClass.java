@@ -12,6 +12,8 @@ import java.util.Scanner;
 public class UtilsClass {
     final static String RESULT_FILE = "D:\\IdeaProjects\\src\\calculator\\Results.txt";
     final static String RESULT_COLUMN = "results";
+    final static String DB_NAME = "calculator_db";
+    private static final String PREP_INSERT_STATEMENT = "INSERT INTO " + DB_NAME + "  (" + RESULT_COLUMN + ") VALUES " + " (?);";
 
     public static void showPreviousResultsFromDB() {
         Connection con = getDbConnection();
@@ -103,8 +105,10 @@ public class UtilsClass {
             //print to results column in my remotemysql db
             Connection con = getDbConnection();
             try {
-                Statement st = con.createStatement();
-                st.execute("INSERT INTO `calculator_db` (`" + RESULT_COLUMN + "`) VALUES ('" + answer + "')");
+                PreparedStatement preparedStatement = con.prepareStatement(PREP_INSERT_STATEMENT);
+                preparedStatement.setDouble(1, answer);
+                System.out.println(preparedStatement);
+                preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
