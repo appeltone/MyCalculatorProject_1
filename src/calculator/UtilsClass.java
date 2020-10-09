@@ -1,7 +1,5 @@
 package calculator;
 
-import com.mysql.cj.protocol.Resultset;
-
 import java.io.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -10,7 +8,10 @@ import java.util.Properties;
 import java.util.Scanner;
 
 public class UtilsClass {
+    // todo change from hard coded path to dynamic path (so it can run on any system)
     final static String RESULT_FILE = "D:\\IdeaProjects\\src\\calculator\\Results.txt";
+
+    // todo the three variables under are only used in printResult() --> make it local
     final static String RESULT_COLUMN = "results";
     final static String DB_NAME = "calculator_db";
     private static final String PREP_INSERT_STATEMENT = "INSERT INTO " + DB_NAME + "  (" + RESULT_COLUMN + ") VALUES " + " (?);";
@@ -32,6 +33,8 @@ public class UtilsClass {
 
     public static Connection getDbConnection() {
         Connection conn = null;
+
+        // todo remove all unused code --> connectionProps, line 44 etc
         Properties connectionProps = new Properties();
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -49,6 +52,7 @@ public class UtilsClass {
     }
 
 
+    // todo if this method is unused delete it
     public static void showPreviousResults() {
         try {
             File outPutFile = new File(RESULT_FILE); //create a new file object

@@ -10,6 +10,8 @@ public class Calculator {
 
         UtilsClass.showPreviousResultsFromDB();
         //UtilsClass.showPreviousResults();
+        // todo remove this while loop and implement a different logic (I want you to show another way)
+        //   break line 17 into 4 lines to first get the arguments from the user and then call calculate
         while (true) {
             UtilsClass.printHeader();
             UtilsClass.printResult(CalculateClass.calculate(UserInteractionClass.getNumFromUser(), UserInteractionClass.getOperatorFromUserUsingInterface(), UserInteractionClass.getNumFromUser()));

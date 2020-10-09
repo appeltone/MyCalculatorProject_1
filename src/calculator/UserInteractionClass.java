@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class UserInteractionClass {
 
     public static double getNumFromUser() {
+        // todo never used - remove / use
         double numFromUser = 0;
         boolean validNum;
         double num1 = 0;
